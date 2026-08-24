@@ -37,3 +37,25 @@ fish_add_path /Users/amogh/.spicetify
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+function gen_llm -d "Generate output.txt with all Python files concatenated"
+    python3 -c "
+import os
+with open('output.txt','w',encoding='utf-8') as out:
+    for r,_,fs in os.walk('.'):
+        for f in fs:
+            if f.endswith('.py'):
+                p=os.path.join(r,f)
+                out.write(f'=== FILE: {p} ===\\n\\n')
+                try: out.write(open(p,encoding='utf-8').read())
+                except Exception as e: out.write(f'[ERROR READING FILE: {e}]\\n')
+                out.write('\\n\\n')
+print('✅ Done: output.txt created')
+"
+end
+
+# Added by Antigravity
+fish_add_path /Users/amogh/.antigravity/antigravity/bin
+
+# Added by Antigravity CLI installer
+set -gx PATH "/Users/amogh/.local/bin" $PATH
