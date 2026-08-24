@@ -1,3 +1,25 @@
 # Generated/runtime state managed by the apps themselves, not hand-written config.
 .config/fish/fish_variables
 .jupyter/lab/workspaces
+
+# Repo docs/assets, not deployable dotfiles.
+README.md
+CLAUDE.md
+Screenshots
+Wallpapers
+
+# Legacy Linux i3 rice, still in pre-chezmoi layout — not deployed until migrated.
+alacritty
+awesomewm
+compton
+dunst
+gtk3
+i3
+i3blocks
+nitrogen
+nvimbackup
+optimus-manager
+picom
+polybar
+rofi
+xresources
