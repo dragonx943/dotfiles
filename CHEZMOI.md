@@ -44,6 +44,15 @@ chezmoi apply
 
 Opens the *source* file (`dot_tmux.conf`) in `$EDITOR`. Nothing deploys until you `apply`.
 
+## I edited several already-managed files in `$HOME` and want to sync them all back
+
+```sh
+chezmoi re-add
+```
+
+Like `chezmoi add`, but re-scans every already-managed file for on-disk changes instead of naming one
+path. Use this after a session of editing live configs directly instead of via `chezmoi edit`.
+
 ## I want to add a brand-new dotfile that doesn't exist in the repo yet
 
 ```sh
